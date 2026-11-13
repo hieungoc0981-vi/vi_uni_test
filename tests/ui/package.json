@@ -1,1 +1,0 @@
-{"name":"vi-uni-ui-tests","private":true,"scripts":{"test":"node flow.cjs"},"devDependencies":{"jsdom":"26.1.0"}}
