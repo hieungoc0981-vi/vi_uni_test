@@ -86,7 +86,9 @@ def create_app():
         def executemany(self, statement, parameters):
             if self.is_postgres:
                 statement = statement.replace("?", "%s")
-            return self.connection.executemany(statement, parameters)
+            cursor = self.connection.cursor()
+            cursor.executemany(statement, parameters)
+            return cursor
 
         def executescript(self, script):
             if not self.is_postgres:
